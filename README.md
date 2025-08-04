@@ -49,7 +49,16 @@ employee_attendance_tracker/
 - Start the CLI app from the src folder
     - python src/main.py
 
-### 1. (Optional) Create and Activate Virtual Environment
+### 1. Clone the Repository
 ```bash
-python3 -m venv venv
-source venv/Scripts/activate   # On Windows: venv\Scripts\activate
+git clone https://github.com/your-username/employee_attendance_tracker.git
+cd employee_attendance_tracker
+
+- Pull the Latest Changes Always do this before starting work
+git pull origin main
+
+- Stage, Commit, and Push Your Changes
+git add .
+git commit -m "Resolve merge conflict"
+git push origin main
+
