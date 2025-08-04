@@ -1,7 +1,7 @@
 from attendance_manager import add_attendance
 
 # , view_attendance
-# from report_generator import generate_report
+from report_generator import generate_report_menu
 # import sys
 
 
@@ -24,8 +24,7 @@ def main():
             print("This feature is under construction.")
             # view_attendance()
         elif choice == "3":
-            print("This feature is under construction.")
-            # genereate_report()
+             generate_report_menu()
         elif choice == "4":
             print("Exiting.... Good bye!")
             # sys.exit(0)
