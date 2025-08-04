@@ -2,7 +2,7 @@ import csv
 import os
 from utils import is_valid_date, is_valid_status
 
-DATA_FILE = "data/attendace.csv"
+DATA_FILE = "data/attendance.csv"
 
 
 def add_attendance():
