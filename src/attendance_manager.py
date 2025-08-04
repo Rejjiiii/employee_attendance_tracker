@@ -62,3 +62,8 @@ def add_attendance():
         writer = csv.writer(file)
         writer.writerow([emp_id, name, date, status])
     print("Attendance recorded successfully.")
+
+def view_attendance():
+    if not os.path.exists(DATA_FILE):
+        print("No attendance records found.")
+        return  
