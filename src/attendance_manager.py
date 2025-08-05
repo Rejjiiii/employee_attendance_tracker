@@ -67,7 +67,7 @@ def add_attendance():
                     if len(row) < 4:
                         continue
 
-                    existing_id, existing_name, existing_date = row
+                    existing_id, existing_name, existing_date, existing_status = row
                     if existing_id == emp_id and existing_date == date:
                         print(
                             f"\nError: Attendance for ID '{emp_id}' on {date} already exist.\n"
@@ -81,7 +81,6 @@ def add_attendance():
                         )
                         duplicate_found = True
                         break
-
 
         if duplicate_found:
             continue
