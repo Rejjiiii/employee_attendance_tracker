@@ -86,8 +86,11 @@ def add_attendance():
         if duplicate_found:
             continue
 
+        write_header = not os.path.exists(DATA_FILE) or os.stat(DATA_FILE).st_size == 0
         with open(DATA_FILE, mode="a", newline="") as file:
             writer = csv.writer(file)
+            if write_header:
+                writer.writerow(["Employee ID", "Name", "Date", "Status"])
             writer.writerow([emp_id, name, date, status])
         print("Attendance recorded successfully.")
         break
