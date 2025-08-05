@@ -50,7 +50,7 @@ def generate_report(filter_date=None):
     if df.empty:
         print("No records for the given date/month.")
         return
-    summary = df.groupby(['EmployeeID', 'Name', 'Status']).size().unstack(fill_value=0)
+    summary = df.groupby(['Employee ID', 'Name', 'Status']).size().unstack(fill_value=0)
     summary['Total'] = summary.sum(axis=1)
     summary['Attendance %'] = (summary.get('Present', 0) / summary['Total'] * 100).round(2)
     print("\n--- Attendance Report ---")
@@ -81,7 +81,7 @@ def export_report_to_csv():
     if df.empty:
         print("No records to export.")
         return
-    summary = df.groupby(['EmployeeID', 'Name', 'Status']).size().unstack(fill_value=0)
+    summary = df.groupby(['Employee ID', 'Name', 'Status']).size().unstack(fill_value=0)
     summary['Total'] = summary.sum(axis=1)
     summary['Attendance %'] = (summary.get('Present', 0) / summary['Total'] * 100).round(2)
     summary.to_csv(REPORT_FILE)
