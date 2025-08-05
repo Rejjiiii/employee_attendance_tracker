@@ -1,25 +1,3 @@
-EmployeeID,Name,Date,Status
-8,Omel Perando,2025-07-25,Present
-1,Regie Jacinto,2025-08-04,Present
-2,Mica Jacinto,07-29-2025,Present
-3,Jojit Dela Cruz,2025-08-04,Present
-4,Jeffree Borlagdan,2025-08-04,Absent
-5,Fritz Tobes,2025-08-04,Absent
-6,Josh Tagle,2025-08-04,Absent
-7,Randy Frando,2025-08-04,Absent
-1,Regie Jacinto,2025-08-05,Absent
-2,Mica Jacinto,2025-08-05,Present
-3,Jojit Dela Cruz,2025-08-05,Present
-4,Jeffree Borlagdan,2025-08-05,Present
-5,Fritz Tobes,2025-08-05,Present
-6,Josh Tagle,2025-08-05,Present
-7,Randy Frando,2025-08-05,Present
-1,Regie Jacinto,2025-08-06,Late
-2,Mica Jacinto,2025-08-06,Absent
-3,Jojit Dela Cruz,2025-08-06,Present
-4,Jeffree Borlagdan,2025-08-06,Absent
-5,Fritz Tobes,2025-08-06,Absent
-6,Josh Tagle,2025-08-06,Present
-7,Randy Frando,2025-08-06,Present
-1,Regie Jacinto,2025-08-07,Present
-
+1,Regie Jacinto,2025-08-05,Present
+1\,regie,2025-08-05,late
+1,Azriel Jacinto,2025-08-05,Late
