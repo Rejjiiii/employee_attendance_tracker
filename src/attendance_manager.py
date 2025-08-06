@@ -82,6 +82,12 @@ def add_attendance():
                         )
                         duplicate_found = True
                         break
+                    if existing_id == emp_id and existing_name.lower() != name.lower():
+                        print(
+                            f"\nError: Employee ID '{emp_id}' is already used for '{existing_name}', not '{name}'.\n"
+                        )
+                        duplicate_found = True
+                        break
 
         if duplicate_found:
             continue
@@ -94,6 +100,7 @@ def add_attendance():
             writer.writerow([emp_id, name, date, status])
         print("Attendance recorded successfully.")
         break
+
 
 def view_attendance():
     DATA_FILE = "data/attendance.csv"
@@ -119,8 +126,10 @@ def view_attendance():
             date = input("Enter date (YYYY-MM-DD): ").strip()
             # Try to standardize and filter by date
             try:
-                df['Date'] = pd.to_datetime(df['Date'], errors='coerce').dt.strftime('%Y-%m-%d')
-                filtered = df[df['Date'] == date]
+                df["Date"] = pd.to_datetime(df["Date"], errors="coerce").dt.strftime(
+                    "%Y-%m-%d"
+                )
+                filtered = df[df["Date"] == date]
                 if filtered.empty:
                     print(f"\nNo records found for {date}.")
                 else:
