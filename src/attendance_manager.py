@@ -82,6 +82,12 @@ def add_attendance():
                         )
                         duplicate_found = True
                         break
+                    if existing_id == emp_id and existing_name.lower() != name.lower():
+                        print(
+                            f"\nError: Employee ID '{emp_id}' is already used for '{existing_name}', not '{name}'.\n"
+                        )
+                        duplicate_found = True
+                        break
 
         if duplicate_found:
             continue
@@ -94,3 +100,44 @@ def add_attendance():
             writer.writerow([emp_id, name, date, status])
         print("Attendance recorded successfully.")
         break
+
+
+def view_attendance():
+    DATA_FILE = "data/attendance.csv"
+    try:
+        df = pd.read_csv(DATA_FILE)
+        if df.empty:
+            print("\nNo attendance records found.")
+            return
+    except FileNotFoundError:
+        print("\nAttendance file not found.")
+        return
+
+    while True:
+        print("\nView Records Options:")
+        print("1. View All Records")
+        print("2. View by Date")
+        print("3. Return to Main Menu")
+        choice = input("Enter your choice (1-3): ").strip()
+        if choice == "1":
+            print("\n     -------- All Attendance Records -------     ")
+            print(df.to_string(index=False))
+        elif choice == "2":
+            date = input("Enter date (YYYY-MM-DD): ").strip()
+            # Try to standardize and filter by date
+            try:
+                df["Date"] = pd.to_datetime(df["Date"], errors="coerce").dt.strftime(
+                    "%Y-%m-%d"
+                )
+                filtered = df[df["Date"] == date]
+                if filtered.empty:
+                    print(f"\nNo records found for {date}.")
+                else:
+                    print(f"\n  ----- Attendance Records for {date} -----  ")
+                    print(filtered.to_string(index=False))
+            except Exception as e:
+                print("Error processing date. Please use YYYY-MM-DD format.")
+        elif choice == "3":
+            break
+        else:
+            print("Invalid input. Please try again.")

@@ -1,7 +1,5 @@
-from attendance_manager import add_attendance
-# , view_attendance
+from attendance_manager import add_attendance, view_attendance
 from report_generator import generate_report_menu
-# import sys
 
 
 def show_menu():
@@ -20,13 +18,11 @@ def main():
         if choice == "1":
             add_attendance()
         elif choice == "2":
-            print("Under construction")
-            # view_attendance()
+            view_attendance()
         elif choice == "3":
              generate_report_menu()
         elif choice == "4":
             print("Exiting.... Good bye!")
-            # sys.exit(0)
             break
         else:
             print("Invalid Input. Please enter a number between 1 and 4.")
