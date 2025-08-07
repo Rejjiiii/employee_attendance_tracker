@@ -124,7 +124,6 @@ def view_attendance():
             print(df.to_string(index=False))
         elif choice == "2":
             date = input("Enter date (YYYY-MM-DD): ").strip()
-            # Try to standardize and filter by date
             try:
                 df["Date"] = pd.to_datetime(df["Date"], errors="coerce").dt.strftime(
                     "%Y-%m-%d"

@@ -6,7 +6,6 @@ import os
 ATTENDANCE_FILE = "data/attendance.csv"
 REPORT_FILE = "reports/summary_report.csv"
 
-# Generate and display report, with optional date/month filter
 def generate_report_menu():
     while True:
         print("\nReport Options:")
@@ -37,16 +36,19 @@ def generate_report(filter_date=None):
         print("No records to analyze.")
         return
     
-    # This function only generates and displays the report. Menu logic should be handled elsewhere.
-    # Standardize date format to YYYY-MM-DD
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce').dt.strftime('%Y-%m-%d')
-    # Drop rows with invalid dates
     df = df.dropna(subset=['Date'])
     if filter_date:
-        if len(filter_date) == 7:  # YYYY-MM
+        import re
+        date_pattern = r"^\d{4}-\d{2}-\d{2}$"
+        month_pattern = r"^\d{4}-\d{2}$"
+        if re.match(month_pattern, filter_date):
             df = df[df['Date'].str.startswith(filter_date)]
-        elif len(filter_date) == 10:  # YYYY-MM-DD
+        elif re.match(date_pattern, filter_date):
             df = df[df['Date'] == filter_date]
+        else:
+            print("Invalid date format. Please enter YYYY-MM-DD or YYYY-MM.")
+            return
     if df.empty:
         print("No records for the given date/month.")
         return
@@ -55,8 +57,7 @@ def generate_report(filter_date=None):
     summary['Attendance %'] = (summary.get('Present', 0) / summary['Total'] * 100).round(2)
     print("\n--- Attendance Report ---")
     print(summary)
-    # Perfect attendance
-    # Ensure 'Absent' and 'Late' columns exist, if not, create them with 0s
+    
     if 'Absent' not in summary:
         summary['Absent'] = 0
     if 'Late' not in summary:
@@ -65,7 +66,6 @@ def generate_report(filter_date=None):
     if not perfect.empty:
         print("\nEmployees with perfect attendance:")
         print(perfect.index.get_level_values('Name').tolist())
-    # Top 3 most absent
     if 'Absent' in summary:
         top_absent = summary['Absent'].sort_values(ascending=False).head(3)
         print("\nTop 3 most absent employees:")
