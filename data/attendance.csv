@@ -1,38 +1,8 @@
 Employee ID,Name,Date,Status
 1,Regie Jacinto,2025-08-05,Absent
 2,Azriel Jacinto,2025-08-05,Absent
-<<<<<<< HEAD
 3,Mica Jacinto,2025-08-05,Present
 1,Regie Jacinto,2025-08-06,Present
 2,Azriel Jacinto,2025-08-06,Absent
 3,Mica Jacinto,2025-08-06,Present
 1,Regie Jacinto,2025-08-07,Present
-=======
-3,Jojit Dela Cruz,2025-08-05,Present
-4,Jeffree Borlagdan,2025-08-05,Present
-5,Fritz Tobes,2025-08-05,Present
-1,Regie Jacinto,2025-08-06,Present
-2,Azriel Jacinto,2025-08-06,Absent
-3,Jojit Dela Cruz,2025-08-06,Late
-4,Jeffree Borlagdan,2025-08-06,Present
-5,Fritz Tobes,2025-08-06,Present
-1,Regie Jacinto,2025-08-06,Late
-2,Azriel Jacinto,2025-08-06,Present
-3,Jojit Dela Cruz,2025-08-06,Absent
-4,Jeffree Borlagdan,2025-08-06,Late
-5,Fritz Tobes,2025-08-06,Present
-1,Regie Jacinto,2025-08-06,Absent
-2,Azriel Jacinto,2025-08-06,Present
-3,Jojit Dela Cruz,2025-08-06,Absent
-4,Jeffree Borlagdan,2025-08-06,Late
-5,Fritz Tobes,2025-08-06,Present
-1,Regie Jacinto,2025-08-06,Absent
-2,Azriel Jacinto,2025-08-06,Present
-3,Jojit Dela Cruz,2025-08-06,Absent
-4,Jeffree Borlagdan,2025-08-06,Late
-5,Fritz Tobes,2025-08-06,Present
-10,JZ Tobes,2025-08-06,Present
-
-
-
->>>>>>> 8ca03f5 (Save local changes before pulling)
